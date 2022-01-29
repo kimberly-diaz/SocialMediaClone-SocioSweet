@@ -1,0 +1,228 @@
+// Imported Google Fonts
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Poppins&display=swap");
+
+// Vendor files
+@import "vendors/bootstrap";
+@import "vendors/jquery.Jcrop";
+
+// Abstract files
+@import "abstracts/mixins";
+// Sections files
+@import "sections/container";
+@import "sections/loader";
+@import "sections/comment-frame";
+@import "sections/like-frame";
+
+// Components files
+@import "components/buttons";
+
+// Core files
+@import "core/reset";
+
+// Layout files
+@import "layout/footer";
+@import "layout/navigation";
+
+// Pages files
+@import "pages/landing";
+@import "pages/main";
+@import "pages/settings";
+@import "pages/upload";
+@import "pages/others";
+
+.menu-burger {
+    display: none;
+    width: 30px;
+    height: 30px;
+}
+
+@media only screen and (min-width: 1280px) {
+    body {
+        width: 1280px;
+    }
+}
+
+@media only screen and (max-width: 1260px) {
+    .main-pages {
+        .left .posts_area {
+            margin: 0 auto;
+			grid-template-columns: 1fr;
+
+            .status_post {
+                margin: 15px 200px;
+                #post_body {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+// Responsiveness of the website pasted here to lower code lines on other pages
+@media only screen and (max-width: 1060px) {
+    .landing-pages {
+        .left-text .text2 {
+            margin-bottom: 0;
+        }
+        .right-illustration {
+            width: 100%;
+            position: static;
+            top: 0;
+			right: 0;
+
+            img {
+                position: static;
+            }
+        }
+    }
+    .main-pages {
+        grid-template-columns: 1fr;
+        .right .user-details {
+            display: none;
+        }
+        .left {
+            padding: 30px 0;
+            .posts_area .status_post {
+                margin: 15px auto;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    .settings-page {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .landing-pages .left-text {
+        h1 {
+            font-size: 30px;
+        }
+
+        .text2 {
+            font-size: 16px;
+        }
+    }
+    .settings-page {
+        h3 {
+            font-size: 20px;
+        }
+        h4 {
+            font-size: 12px;
+        }
+        .card div h3 {
+            font-size: 14px;
+        }
+    }
+}
+
+@media only screen and (max-width: 780px) {
+    .main-nav-bar {
+        padding: 25px 60px;
+        .menu-burger {
+            display: block;
+        }
+        .nav-icons {
+            position: absolute;
+            top: 125px;
+            right: 0;
+            width: 150px;
+            height: 92vh;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transform: translateX(100%);
+            transition: transform 0.5s ease-in;
+        }
+        .nav-active {
+            transform: translateX(0%);
+        }
+    }
+    .main-pages {
+        margin: 0 60px;
+        display: block;
+        .left .status_post {
+            margin: 15px auto;
+        }
+    }
+    .settings-page {
+        margin: 20px 50px;
+    }
+}
+@media only screen and (max-width: 700px) {
+    .main-pages .left .categories {
+		grid-auto-flow: row;
+    }
+}
+
+@media only screen and (max-width: 660px) {
+    .landing-pages .left-text {
+        width: 100%;
+    }
+    .main-pages .left .posts_area .status_post {
+        margin: 15px auto;
+        #post_body {
+            width: 275px;
+        }
+    }
+}
+
+@media only screen and (max-width: 530px) {
+    .landing-nav-bar {
+        margin: 35px 60px;
+
+        .register-btn {
+            margin-right: 20px;
+        }
+        .login-btn {
+            margin-top: 0;
+            padding: 15px 25px;
+        }
+    }
+    .landing-pages {
+        margin: 0 60px;
+        .left-text {
+            margin-bottom: 60px;
+
+            h1 {
+                font-size: 25px;
+            }
+            .text {
+                font-size: 16px;
+            }
+            .feature div  {
+                h4 {
+                    font-size: 16px;
+                }
+                p {
+                    font-size: 14px;
+                }
+            }
+            .hashtags {
+                margin-top: 30px;
+            }
+            input[type=submit] {
+                font-size: 14px;
+            }
+        } 
+        .feature-buttons {
+            margin-top: 25px;
+            .login-btn {
+                margin-top: 10px;
+                font-size: 14px;
+            }
+            .register-btn {
+                font-size: 14px;
+            }
+        }
+    }
+    .landing-footer {
+        margin-top: 50px;
+    }
+    .settings-page .card {
+        grid-template-columns: 1fr;
+    }
+}

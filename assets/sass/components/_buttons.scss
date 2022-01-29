@@ -1,0 +1,37 @@
+button, a, .nav-bar h3, .main-nav-bar h3, .close-btn, input[type=submit], .page-next-btn, .page-next-btn-2, .item {
+	cursor: pointer; //changes the cursor of buttons to pointer
+}
+
+.edit-btn {
+    @include button-style-3;
+}
+
+.feature-buttons {
+    margin-top: 50px;
+    .login-btn {
+        @include button-style;
+        padding: 15px 45px;
+        font-size: 18px;
+    }
+    .register-btn {
+        @include button-style-2;
+        margin-left: 35px;
+        font-size: 18px;
+        font-weight: 600;
+    }
+}
+
+.login-btn {
+    @include button-style;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+.profile-page {
+    .post_remove, .post_respond, .post_sent, .add_friend, .post_add {
+        @include button-style-3;
+        box-sizing: border-box;
+        font-weight: normal !important;
+    }
+}

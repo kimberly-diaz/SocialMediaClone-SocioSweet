@@ -1,0 +1,11 @@
+.upload-page {
+    margin-left: 125px;
+    text-align: left;
+    display: block;
+
+    [type="submit"] {
+        @include button-style;
+        padding: 0px;
+        border-radius: 5px;
+    }
+}
