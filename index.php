@@ -24,7 +24,7 @@
                     </div>
                 </div>
                 <div class="feature">
-                    <div class="img-frame"><img src="assets/images/icons/chat.png" alt="cancel" width="30px"></div>
+                    <div class="img-frame"><img src="assets/images/icons/c.png" alt="cancel" width="30px"></div>
 
                     <div>
                         <h4>Anonymous Chat</h4>
