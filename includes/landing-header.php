@@ -21,7 +21,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SocioSweet</title> <!-- Title of website -->
-    <link rel="icon" type="image/x-icon" href="../../assets/images/icons/favicon.png"><!-- Favicon of site -->
+    <?php if($cur_page_name == "index.php") { ?><link rel="icon" type="image/x-icon" href="assets/images/icons/favicon.png"><!-- Favicon of site --><?php } else { ?><link rel="icon" type="image/x-icon" href="../../assets/images/icons/favicon.png"><!-- Favicon of site --><?php } ?>
 
     <!-- Loads main AJAX file-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
