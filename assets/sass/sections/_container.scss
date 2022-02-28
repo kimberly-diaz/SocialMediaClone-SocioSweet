@@ -1,0 +1,255 @@
+ /* 
+ * Post button
+ *****************************************************/
+.outer-modal-container {
+	margin: 0;
+	padding: 0;
+	background-color: rgba(0, 0, 0, 0.3);
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	pointer-events: none;
+	overflow: hidden;
+    z-index: 1000;
+	transition: visibility 0s, opacity 0.3s linear;
+
+	.modal-container {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	
+		.modal {
+			background-color: white;
+			border-radius: 15px;
+			position: static;
+			margin: 10px 155px;
+			display: inline-block;
+			
+			.post-header {
+				padding: 15px 40px;
+				display: grid;
+				grid-auto-flow: column;
+				justify-content: space-between;
+				align-items: center;
+				border-bottom: 2px solid #F0F6FD;
+	
+				.close-btn {
+					width: 20px;
+					height: 20px;
+					&:hover {
+						filter: brightness(150%);
+					}
+				}
+				h3 {
+					font-family: 'Montserrat', sans-serif;
+					text-align: center;
+					font-size: 18px;
+				}
+				.page-next-btn, .page-next-btn-2 {
+					background-color: white;
+					border: none;
+					color: #FAA84A;
+					font-weight: bold;
+					font-size: 16px;
+					letter-spacing: 1px;
+					&:hover {
+						color: darken(#FAA84A, 10%);
+					}
+				}
+			}
+	
+			.first-page {
+				width: 505px;
+				.post-form-1 {
+					padding: 25px 50px;
+					box-sizing: border-box;
+					.post-illustration {
+						height: 275px;
+						width: 275px;
+						margin: 0 auto;
+					}
+					#fileToUpload {
+						width: 100%;
+						margin-top: 25px;
+						padding: 15px 30px;
+						border: 2px solid #626279;
+						border-radius: 15px;
+						font-size: 12px;
+						cursor: pointer;
+						box-sizing: border-box;
+			
+						&::-webkit-file-upload-button {
+							visibility: hidden;
+						}
+						&::before {
+							content: 'Add to your post';
+						}
+						&:hover {
+							box-shadow: red;
+							box-shadow: 0 0 25px rgba(137, 137, 163, 0.3);
+						}
+						&:active {
+							border: 2px solid #F37C7C;
+						}
+					}
+				}
+			}
+			.second-page {
+				display: none;
+				width: 950px;
+				height: 550px;
+	
+				.post-preview {
+					display: grid;
+					grid-template-columns: 1fr 1fr;
+	
+					.image-preview {
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						font-weight: bold;
+						color: white;
+						height: 475px;
+						background-color: #3B3B58;
+						border-radius: 0 0 0 15px;
+	
+						.image-preview__image {
+							display: none;
+							height: 100%;
+							width: 100%;
+							box-sizing: border-box;
+							object-fit: cover;
+							border-radius: 0 0 0 15px;
+						}
+					}
+					.post-form-2 {
+						div {
+							&:first-child {
+								margin-top: 30px;
+								padding: 0 40px 30px;
+								border-bottom: 2px solid #F0F6FD;
+								box-sizing: border-box;
+		
+								.post-text {
+									width: 100%;
+									height: 300px;
+									color: #3B3B58;
+									font-family: 'Poppins', sans-serif;
+									border: none;
+								}
+								textarea::placeholder {
+									color: #F37C7C;
+									font-family: 'Poppins', sans-serif;
+									font-weight: bold;
+								}
+							}
+						}
+						.post-size-submit {
+							display: grid;
+							grid-template-columns: 1fr 1fr 70px;
+							margin: 30px 20px;
+
+							.select, .select2 {
+								position: relative;
+								margin-bottom: 0;
+
+								svg {
+									position: absolute;
+									right: 12px;
+									top: calc(50% - 3.5px);
+									width: 10px;
+									height: 6px;
+									stroke-width: 2px;
+									stroke: #F58F8F;
+									fill: none;
+									stroke-linecap: round;
+									stroke-linejoin: round;
+									pointer-events: none;
+								}
+
+								select {
+									-webkit-appearance: none;
+									padding: 7px 40px 7px 12px;
+									width: 100%;
+									height: 100%;
+									color: #3B3B58;
+									border: 2px solid #F37C7C;
+									border-radius: 15px 0 0 15px;
+									background: #fff;
+									cursor: pointer;
+									transition: all 150ms ease;
+
+									&:required:invalid {
+										color: #3B3B58;
+									}
+
+									option {
+										color: #3B3B58;
+
+										&[value=""][disabled] {
+											display: none;
+										}
+									}
+
+									&:focus {
+										outline: none;
+										border-color: #F37C7C;
+									}
+
+									&:hover + svg {
+										stroke: #F37C7C;
+									}
+								}
+							}
+
+							.select2 {
+								select {
+									border-radius: 0;
+									border-top: 2px solid #F37C7C;
+									border-bottom: 2px solid #F37C7C;
+									border-left: none;
+									border-right: none;
+								}
+							}
+
+							.sprites {
+								position: absolute;
+								width: 0;
+								height: 0;
+								pointer-events: none;
+								user-select: none;
+							}
+
+							&:not(:first-child) {
+								.create-post-btn {
+									@include button-style;
+									border-radius: 0 15px 15px 0;
+									padding: 15px;
+									width: 100%;
+									box-sizing: border-box;
+								}
+							}
+
+							&:hover {
+								box-shadow: 0 0 20px rgba(255, 204, 204, .72);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+// The added show class to show the button well
+.outer-modal-container.show {
+	pointer-events: auto;
+	opacity: 1;
+	transition: visibility 0s, opacity 0.3s linear;
+	overflow: hidden;
+}
