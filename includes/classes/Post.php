@@ -1,4 +1,4 @@
-=4567441=<?php
+<?php
 class Post {
 	private $user_obj;
 	private $con;
